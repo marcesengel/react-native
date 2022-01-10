@@ -207,7 +207,6 @@ public class ReactImageView extends GenericDraweeView {
   private @Nullable Object mCallerContext;
   private int mFadeDurationMs = -1;
   private boolean mProgressiveRenderingEnabled;
-  private ReadableMap mHeaders;
 
   // We can't specify rounding in XML, so have to do so here
   private static GenericDraweeHierarchy buildHierarchy(Context context) {
@@ -386,7 +385,8 @@ public class ReactImageView extends GenericDraweeView {
       if (sources.size() == 1) {
         ReadableMap source = sources.getMap(0);
         String uri = source.getString("uri");
-        ImageSource imageSource = new ImageSource(getContext(), uri);
+        ReadableMap headers = source.getMap("headers");
+        ImageSource imageSource = new ImageSource(getContext(), uri, headers);
         tmpSources.add(imageSource);
         if (Uri.EMPTY.equals(imageSource.getUri())) {
           warnImageSource(uri);
@@ -395,9 +395,10 @@ public class ReactImageView extends GenericDraweeView {
         for (int idx = 0; idx < sources.size(); idx++) {
           ReadableMap source = sources.getMap(idx);
           String uri = source.getString("uri");
+          ReadableMap headers = source.getMap("headers");
           ImageSource imageSource =
               new ImageSource(
-                  getContext(), uri, source.getDouble("width"), source.getDouble("height"));
+                  getContext(), uri, headers, source.getDouble("width"), source.getDouble("height"));
           tmpSources.add(imageSource);
           if (Uri.EMPTY.equals(imageSource.getUri())) {
             warnImageSource(uri);
@@ -467,10 +468,6 @@ public class ReactImageView extends GenericDraweeView {
         mBorderCornerRadii != null && !YogaConstants.isUndefined(mBorderCornerRadii[3])
             ? mBorderCornerRadii[3]
             : defaultBorderRadius;
-  }
-
-  public void setHeaders(ReadableMap headers) {
-    mHeaders = headers;
   }
 
   public void maybeUpdateView() {
@@ -569,7 +566,7 @@ public class ReactImageView extends GenericDraweeView {
             .setProgressiveRenderingEnabled(mProgressiveRenderingEnabled);
 
     ImageRequest imageRequest =
-        ReactNetworkImageRequest.fromBuilderWithHeaders(imageRequestBuilder, mHeaders);
+        ReactNetworkImageRequest.fromBuilderWithHeaders(imageRequestBuilder, mImageSource.getHeaders());
 
     if (mGlobalImageLoadListener != null) {
       mGlobalImageLoadListener.onLoadAttempt(mImageSource.getUri());
