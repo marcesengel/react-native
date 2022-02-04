@@ -11,7 +11,7 @@
   "createdBy": {
     "gradle": {
       "version": "6.9",
-      "buildId": "3vbyjmhabfcjlfbkchnybm6gb4"
+      "buildId": "j34yth25tzfuzitwmpcwxbwp3m"
     }
   },
   "variants": [
@@ -134,11 +134,11 @@
         {
           "name": "react-native-0.66.4.aar",
           "url": "react-native-0.66.4.aar",
-          "size": 17691379,
-          "sha512": "ba562b7c2e8f8a4c21c970150f7ee8a66808b1d6b72e6685805c6e17d9d67a99131dbe3366f877a1b746a5b62f2454d0d66fbf98bc91ff83cf662b94740a42c8",
-          "sha256": "2bc2860921fca1e2fac70682929a425248e18c2986298f5e3cce7dead4b5e62b",
-          "sha1": "e0c0d0b073ba188a6642bd800aadf947c762065e",
-          "md5": "6c9503c2000c2675f23920e38a8c32cd"
+          "size": 17689850,
+          "sha512": "3f3a8d69c15890e05213e06649084da6d67678275ade647450d72a1e5bf2790f1c48ea42c89a2987bb68eb669902a92b97422e73967a2975562b8b88ef0905c5",
+          "sha256": "1d78223d33c68b500b9e6430350fe0bca1cc7db3ec00bbfd21f16cda46b3eb2f",
+          "sha1": "9054c08a4bfe433f74bfccda3d572a2688ad117c",
+          "md5": "43c086b679e6a3c70423bea23918062b"
         }
       ]
     },
@@ -261,11 +261,11 @@
         {
           "name": "react-native-0.66.4.aar",
           "url": "react-native-0.66.4.aar",
-          "size": 17691379,
-          "sha512": "ba562b7c2e8f8a4c21c970150f7ee8a66808b1d6b72e6685805c6e17d9d67a99131dbe3366f877a1b746a5b62f2454d0d66fbf98bc91ff83cf662b94740a42c8",
-          "sha256": "2bc2860921fca1e2fac70682929a425248e18c2986298f5e3cce7dead4b5e62b",
-          "sha1": "e0c0d0b073ba188a6642bd800aadf947c762065e",
-          "md5": "6c9503c2000c2675f23920e38a8c32cd"
+          "size": 17689850,
+          "sha512": "3f3a8d69c15890e05213e06649084da6d67678275ade647450d72a1e5bf2790f1c48ea42c89a2987bb68eb669902a92b97422e73967a2975562b8b88ef0905c5",
+          "sha256": "1d78223d33c68b500b9e6430350fe0bca1cc7db3ec00bbfd21f16cda46b3eb2f",
+          "sha1": "9054c08a4bfe433f74bfccda3d572a2688ad117c",
+          "md5": "43c086b679e6a3c70423bea23918062b"
         }
       ]
     }
